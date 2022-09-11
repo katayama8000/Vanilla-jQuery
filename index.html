@@ -40,7 +40,9 @@
         </ul>
       </div>
       <div class="dots-5"></div>
-      <a href="https://github.com/katayama8000/" onclick="toggleFlag()">github</a>
+      <a href="https://github.com/katayama8000/" onclick="toggleFlag()"
+        >github</a
+      >
       <button onclick="checkFlag()">check</button>
     </main>
     <script
@@ -66,16 +68,15 @@
         alert(flag);
       }
 
-      $(window).on('beforeunload', (event)=> {
-          // 何かしら処理
-          if (flag) {
-            return;
-          }
-          // event.preventDefault();
-          // event.returnValue = '';
-          return "このページを離れようとしています。";
+      $(window).on("beforeunload", (event) => {
+        // 何かしら処理
+        if (flag) {
+          return;
+        }
+        // event.preventDefault();
+        // event.returnValue = '';
+        return "このページを離れようとしています。";
       });
-    </script>
     </script>
   </body>
 </html>
