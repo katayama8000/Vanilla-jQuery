@@ -40,11 +40,42 @@
         </ul>
       </div>
       <div class="dots-5"></div>
+      <a href="https://github.com/katayama8000/" onclick="toggleFlag()">github</a>
+      <button onclick="checkFlag()">check</button>
     </main>
     <script
       type="text/javascript"
       src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
     ></script>
     <script src="./main.js"></script>
+    <script>
+      // if (window.performance) {
+      //   if (performance.navigation.type === 1) {
+      //     alert("リロードされました");
+      //   }
+      // }
+
+      let flag = false;
+
+      function toggleFlag() {
+        flag = true;
+      }
+
+      function checkFlag() {
+        console.log("check");
+        alert(flag);
+      }
+
+      $(window).on('beforeunload', (event)=> {
+          // 何かしら処理
+          if (flag) {
+            return;
+          }
+          // event.preventDefault();
+          // event.returnValue = '';
+          return "このページを離れようとしています。";
+      });
+    </script>
+    </script>
   </body>
 </html>
