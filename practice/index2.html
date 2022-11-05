@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>🐻</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/kimeiga/bahunya/dist/bahunya.min.css"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Practice</a></li>
+        </ul>
+      </nav>
+    </header>
+    <h1>javaScript</h1>
+    <div class="container">
+      <div>
+        <h2>テーブル</h2>
+        <table id="table">
+          <th>ID</th>
+          <th>性</th>
+          <th>名</th>
+          <tbody>
+            <tr>
+              <td><button id="firstId" class="nameId">1</button></td>
+              <td class="lastName"></td>
+              <td class="firstName"></td>
+              <td><button>追加</button></td>
+              <td><button>編集</button></td>
+              <td><button>削除</button></td>
+            </tr>
+            <tr>
+              <td><button id="secondId" class="nameId">2</button></td>
+              <td class="lastName"></td>
+              <td class="firstName"></td>
+              <td><button>追加</button></td>
+              <td><button>編集</button></td>
+              <td><button>削除</button></td>
+            </tr>
+            <tr>
+              <td><button id="thirdId" class="nameId">3</button></td>
+              <td class="lastName"></td>
+              <td class="firstName"></td>
+              <td><button>追加</button></td>
+              <td><button>編集</button></td>
+              <td><button>削除</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div>
+        <h4>名前追加</h4>
+        <form name="myform">
+          <span id="selectedUser">選択されていません</span>
+          <input name="title" type="text" id="lastName" value="" />
+          <input name="title" type="text" id="firstName" value="" />
+          <input name="addSubmit" type="submit" value="追加" />
+        </form>
+      </div>
+    </div>
+  </body>
+  <script src="./js/main.js"></script>
+</html>
