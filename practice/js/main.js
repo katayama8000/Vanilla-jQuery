@@ -3,17 +3,11 @@ console.log('main2.js');
 
 window.addEventListener("DOMContentLoaded", function () {
     let form = document.forms.myform;
-    let firstId = document.getElementById("firstId");
-    let secondId = document.getElementById("secondId");
-    let thirdId = document.getElementById("thirdId");
-    let classId = document.getElementsByClassName("nameId");
-    console.log(classId);
+    let userIdButtons = document.getElementsByClassName("userIdButton");
+    let editButtons = document.getElementsByClassName("editButton");
     let selectedUser = document.getElementById("selectedUser")
     let firstNames = document.getElementsByClassName("firstName");
     let lastNames = document.getElementsByClassName("lastName");
-    let firstEdit = document.getElementById("firstEdit");
-    let secondEdit = document.getElementById("secondEdit");
-    let thirdEdit = document.getElementById("thirdEdit");
 
 
     form.addEventListener("submit", (e) => {
@@ -36,11 +30,13 @@ window.addEventListener("DOMContentLoaded", function () {
     });
 
     function handleInputName(e, id) {
+        console.log(e, id);
         e.preventDefault();
-        selectedUser.innerHTML = `${id.innerHTML}番目のユーザーが選択されました`;
+        selectedUser.innerHTML = `${id}番目のユーザーが選択されました`;
     }
 
     function handleEditName(e, id) {
+        console.log(e, id);
         e.preventDefault();
         let firstName = firstNames[id].innerHTML;
         let lastName = lastNames[id].innerHTML;
@@ -48,29 +44,16 @@ window.addEventListener("DOMContentLoaded", function () {
         document.getElementById("firstName").value = firstName;
     }
 
-    firstId.addEventListener("click", (e) => {
-        handleInputName(e, firstId);
-    });
+    for (let i = 0; i < userIdButtons.length; i++) {
+        userIdButtons[i].addEventListener("click", (e) => {
+            handleInputName(e, i + 1);
+        });
+    }
 
-    secondId.addEventListener("click", (e) => {
-        handleInputName(e, secondId);
-    });
-
-    thirdId.addEventListener("click", (e) => {
-        handleInputName(e, thirdId);
-    });
-
-    firstEdit.addEventListener("click", (e) => {
-        handleEditName(e, 0);
-    });
-
-    secondEdit.addEventListener("click", (e) => {
-        handleEditName(e, 1);
-    });
-
-    thirdEdit.addEventListener("click", (e) => {
-        handleEditName(e, 2);
-    });
-
+    for (let i = 0; i < editButtons.length; i++) {
+        editButtons[i].addEventListener("click", (e) => {
+            handleEditName(e, i);
+        });
+    }
 
 });
