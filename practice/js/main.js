@@ -8,6 +8,7 @@ window.addEventListener("DOMContentLoaded", function () {
     let selectedUser = document.getElementById("selectedUser")
     let firstNames = document.getElementsByClassName("firstName");
     let lastNames = document.getElementsByClassName("lastName");
+    let ages = document.getElementById("age");
 
 
     form.addEventListener("submit", (e) => {
@@ -27,6 +28,13 @@ window.addEventListener("DOMContentLoaded", function () {
         }
         lastNames[switchId - 1].innerHTML = lastName;
         firstNames[switchId - 1].innerHTML = firstName;
+    });
+
+    ages.addEventListener("change", (e) => {
+        console.log(e.target.value);
+        if (Number(e.target.value) > 20) {
+            alert("20歳以上は登録できません");
+        }
     });
 
     function handleInputName(e, id) {
