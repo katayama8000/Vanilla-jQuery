@@ -9,3 +9,6 @@ console.log(a.localeCompare(b, 'en', { sensitivity: 'base' }));
 const c = 'taro';
 const d = 'giro';
 console.log(c.localeCompare(d));
+
+// https://qiita.com/arx8/items/021e19189c9e0f60748e
+// 直列処理
