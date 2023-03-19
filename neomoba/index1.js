@@ -7,13 +7,13 @@ const cheerio = require("cheerio");
 const app = express();
 app.listen(PORT, () => console.log("running"));
 
-const URL = "https://search.rakuten.co.jp/search/mall/keyboard/";
+const URL = "https://trade.sbineomobile.co.jp/domestic/stockInfo/brand?securitiesCode=4689";
 const data = [];
 
 axios(URL)
     .then((response) => {
         const htmlParser = response.data;
-        // console.log(htmlParser);
+        console.log(htmlParser);
         const $ = cheerio.load(htmlParser);
 
         $(".searchresultitem", htmlParser).each(function () {
