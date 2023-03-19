@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>AlphaVantage</h1>
+  </body>
+  <script>
+    // APIキー
+    const apiKey = 'WVZ7UG5YCO8D2L1L';
+
+    // オリックスの株式コード
+    const symbol = 'IBM';
+
+    // Alpha Vantage APIのエンドポイント
+    const apiUrl = `https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=${symbol}&apikey=${apiKey}`;
+
+    // APIリクエストを送信
+    fetch(apiUrl)
+      .then((response) => response.json())
+      .then((data) => {
+        console.log('data', data);
+        console.log('オリックス株式の株価情報：', data['Global Quote']);
+      })
+      .catch((error) => {
+        console.error('エラーが発生しました', error);
+      });
+
+    // Alpha Vantage APIのエンドポイント
+    const apiUrl2 = `https://www.alphavantage.co/query?function=OVERVIEW&symbol=${symbol}&apikey=${apiKey}`;
+
+    // APIリクエストを送信
+    fetch(apiUrl2)
+      .then((response) => response.json())
+      .then((data) => {
+        console.log('オリックス株式の配当金情報：', data['DividendPerShare']);
+      })
+      .catch((error) => {
+        console.error('エラーが発生しました', error);
+      });
+  </script>
+</html>

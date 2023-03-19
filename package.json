@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/katayama8000/JavaScript-Playground/issues"
   },
-  "homepage": "https://github.com/katayama8000/JavaScript-Playground#readme"
+  "homepage": "https://github.com/katayama8000/JavaScript-Playground#readme",
+  "devDependencies": {
+    "request": "^2.88.2"
+  }
 }
