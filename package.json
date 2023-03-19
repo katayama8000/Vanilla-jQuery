@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/katayama8000/JavaScript-Playground#readme",
   "devDependencies": {
-    "request": "^2.88.2"
+    "request": "^2.88.2",
+    "yahoo-finance2": "^2.3.10"
   }
 }
