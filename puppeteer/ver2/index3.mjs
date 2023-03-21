@@ -5,6 +5,7 @@ import * as dotenv from 'dotenv'
     dotenv.config();
     const browser = await puppeteer.launch();
     const page = await browser.newPage();
+    console.log(process.env.USERNAME, process.env.PASSWORD)
 
     try {
         // タイムアウト時間を60秒に設定する

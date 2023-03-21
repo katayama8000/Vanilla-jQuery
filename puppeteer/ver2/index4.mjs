@@ -1,5 +1,5 @@
 import puppeteer from 'puppeteer';
-import dotenv from 'dotenv';
+import * as dotenv from 'dotenv'
 
 dotenv.config();
 
@@ -13,6 +13,7 @@ const login = async (page) => {
     // ログインフォームを入力する
     await page.type('input[name="username"]', USERNAME);
     await page.type('input[name="password"]', PASSWORD);
+    console.log(USERNAME, PASSWORD);
 
     // ログインボタンをクリックする
     await Promise.all([
@@ -24,6 +25,7 @@ const login = async (page) => {
 };
 
 const navigateToStockInfo = async (page) => {
+    console.log(SECURITIES_CODE)
     const url = `https://trade.sbineomobile.co.jp/domestic/stockInfo/brand?securitiesCode=${SECURITIES_CODE}`;
     await page.goto(url);
     console.log('画面遷移成功');
@@ -41,20 +43,22 @@ const getCurrentStockPrice = async (page) => {
     // // 少し待つ
     const sleep = (msec) => new Promise((resolve) => setTimeout(resolve, msec));
     await sleep(3000);
-    // const selector = 'td._text-r';
+    const selector = 'td._text-r';
     // await page.waitForSelector(selector);
     // const text = await page.$eval(selector, (element) => element.textContent);
     // console.log('現在の配当金は', text, 'です。');
-    const text = await page.evaluate(() => {
-        const td = document.querySelector('td._text-r');
-        return td;
-    });
-    console.log('現在の株価は', text, 'です。');
+    // const text = await page.evaluate(() => {
+    //     const td = document.querySelector('td._text-r');
+    //     return td.textContent;
+    // });
+    // console.log('現在の配当金は', text, 'です。');
 };
 
 const run = async () => {
+    console.log("scraiing starts")
     const browser = await puppeteer.launch();
     const page = await browser.newPage();
+    console.log(process.env);
 
     try {
         // ログインする
