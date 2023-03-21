@@ -5,7 +5,7 @@ import puppeteer from 'puppeteer';
     const page = await browser.newPage();
 
     await page.goto('https://yahoo.co.jp/');
-    await page.screenshot({ path: 'yahoo.png' });
+    await page.screenshot({ path: 'img/yahoo.png' });
 
 
     await browser.close();

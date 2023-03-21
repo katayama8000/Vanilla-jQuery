@@ -13,6 +13,6 @@ import puppeteer from 'puppeteer';
         return el.innerText
     }));
     console.log(titles);
-    await page.screenshot({ path: 'google.png', fullPage: true });
+    await page.screenshot({ path: 'img/google.png', fullPage: true });
     await browser.close();
 })();
