@@ -2,14 +2,11 @@ import puppeteer from 'puppeteer';
 import * as dotenv from 'dotenv'
 
 (async () => {
+    const CODE = 4689;
     dotenv.config({ path: '../.env' });
     const browser = await puppeteer.launch();
     const page = await browser.newPage();
-
     try {
-        // タイムアウト時間を60秒に設定する
-        await page.setDefaultNavigationTimeout(60000);
-
         await page.goto('https://trade.sbineomobile.co.jp/login');
 
         // ログインフォームを入力する
@@ -23,15 +20,15 @@ import * as dotenv from 'dotenv'
         ]);
 
         console.log('ログイン成功');
-
-        const num = 4689;
         // 指定のページに移動する
+
+        const url = `https://trade.sbineomobile.co.jp/domestic/stockInfo/brand?securitiesCode=${CODE}`;
         await Promise.all([
-            page.click(`a[href="/domestic/stockInfo/brand?securitiesCode=${num}"]`),
+            page.goto(url),
             page.waitForNavigation({ waitUntil: 'networkidle0' })
         ]);
 
-        console.log('5020をクリック');
+        console.log(`ページ遷移成功`);
 
         // ボタンをクリックしてからモーダルが表示されるまでの動作をシミュレートする
         await page.evaluate(() => {
@@ -40,16 +37,16 @@ import * as dotenv from 'dotenv'
             return new Promise((resolve) => setTimeout(resolve, 3000));
         });
 
-        console.log('詳細をクリック');
+        console.log('モーダル表示成功');
 
         // td._text-rの中の文字列を取得する
         const text = await page.evaluate(() => {
             const td = document.querySelector('td._text-r');
             return td.textContent;
         });
-        console.log('現在の株価は', text, '円です。');
+        console.log('現在の配当金は', text, 'です。');
 
-        await page.screenshot({ path: 'img/neomoba4.png', fullPage: true });
+        await page.screenshot({ path: 'img/neomoba3.png', fullPage: true });
     } catch (error) {
         console.error(error);
     } finally {

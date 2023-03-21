@@ -1,7 +1,7 @@
 import puppeteer from 'puppeteer';
 import * as dotenv from 'dotenv'
 
-dotenv.config();
+dotenv.config({ path: '../.env' });
 
 const USERNAME = process.env.USERNAME;
 const PASSWORD = process.env.PASSWORD;
@@ -36,7 +36,10 @@ const openDetailModal = async (page) => {
     // button.showDetailが読み込まれるまで待機する
     await page.waitForSelector('button.showDetail');
     await page.click('button.showDetail');
-    console.log('詳細をクリック');
+    // console.log('詳細をクリック');
+    // const button = document.querySelector('button.showDetail');
+    // button.click();
+    return new Promise((resolve) => setTimeout(resolve, 3000));
 };
 
 const getCurrentStockPrice = async (page) => {
@@ -44,9 +47,9 @@ const getCurrentStockPrice = async (page) => {
     const sleep = (msec) => new Promise((resolve) => setTimeout(resolve, msec));
     await sleep(3000);
     const selector = 'td._text-r';
-    // await page.waitForSelector(selector);
-    // const text = await page.$eval(selector, (element) => element.textContent);
-    // console.log('現在の配当金は', text, 'です。');
+    await page.waitForSelector(selector);
+    const text = await page.$eval(selector, (element) => element.textContent);
+    console.log('現在の配当金は', text, 'です。');
     // const text = await page.evaluate(() => {
     //     const td = document.querySelector('td._text-r');
     //     return td.textContent;
