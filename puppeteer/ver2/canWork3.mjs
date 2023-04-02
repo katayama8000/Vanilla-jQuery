@@ -2,6 +2,7 @@ import puppeteer from 'puppeteer';
 import * as dotenv from 'dotenv'
 
 (async () => {
+    console.time('puppeteer');
     const code = 8591;
     dotenv.config({ path: '../.env' });
     console.log(process.env.USERNAME);
@@ -72,5 +73,6 @@ import * as dotenv from 'dotenv'
         throw error;
     } finally {
         await browser.close();
+        console.timeEnd('puppeteer');
     }
 })();

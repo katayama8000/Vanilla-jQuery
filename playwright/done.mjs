@@ -59,6 +59,7 @@ const getDividend = async (page) => {
 };
 
 (async () => {
+    console.time('playwright')
     const code = 8591;
 
     const browser = await chromium.launch();
@@ -76,12 +77,13 @@ const getDividend = async (page) => {
         return {
             stockPrice: currentValue,
             dividend: dividend,
-            brand,
+            brand: brand,
         };
     } catch (error) {
         console.error(error);
         throw error;
     } finally {
         await browser.close();
+        console.timeEnd('playwright')
     }
 })();

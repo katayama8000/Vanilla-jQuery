@@ -2,6 +2,7 @@ import puppeteer from 'puppeteer';
 import * as dotenv from 'dotenv'
 
 (async () => {
+
     const CODE = 8591;
     dotenv.config({ path: '../.env' });
     const browser = await puppeteer.launch();
