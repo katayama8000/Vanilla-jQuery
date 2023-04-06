@@ -13,10 +13,10 @@ import { chromium } from 'playwright-core';
         new Promise((resolve) => {
             setTimeout(() => {
                 resolve();
-            }, 1000);
+            }, 3000);
         });
         //　スクショ
-        await page.screenshot({ path: `./playwright/Twitter/img/screenshot.png` });
+        await page.screenshot({ path: `./img/screenshot.png` });
 
 
     } catch (error) {
