@@ -19,3 +19,6 @@ numbers2.sort((a, b) => {
     return a - b
 });
 console.log(numbers2);
+
+const names = ['Alice', 'Bob', 'Charlie', 'Bob'];
+console.log(names.at(-1) === names[names.length - 1]); // true
