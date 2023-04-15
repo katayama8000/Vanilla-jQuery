@@ -1,3 +1,4 @@
+const makeShortString = require("make-short-string");
 // 【配列の要素からオブジェクトを作成する例】
 
 const arr = [
@@ -22,3 +23,6 @@ console.log(numbers2);
 
 const names = ['Alice', 'Bob', 'Charlie', 'Bob'];
 console.log(names.at(-1) === names[names.length - 1]); // true
+
+const str = makeShortString("hello-world", 10);
+console.log(str); // hello-worl...

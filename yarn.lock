@@ -839,6 +839,11 @@ lru-cache@^7.14.1:
   resolved "https://registry.yarnpkg.com/lru-cache/-/lru-cache-7.18.3.tgz#f793896e0fd0e954a59dfdd82f0773808df6aa89"
   integrity sha512-jumlc0BIUrS3qJGgIkWZsyfAM7NCWiBcCDhnd+3NNM5KbBmLTgHVfWBcg6W+rLUsIpzpERPsvwUP7CckAQSOoA==
 
+make-short-string@^1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/make-short-string/-/make-short-string-1.0.5.tgz#8069ffe559ee2fc6fb55d224e0a0a747eb9a61d4"
+  integrity sha512-c/tPv58F/tCLwxgxwljCPaFXvBXoUBiEepIjJDgInHomkO80YHl4HusjbpJ+BC2gl7fGIsPnK23RQVkE4odj1Q==
+
 media-typer@0.3.0:
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/media-typer/-/media-typer-0.3.0.tgz#8710d7af0aa626f8fffa1ce00168545263255748"
