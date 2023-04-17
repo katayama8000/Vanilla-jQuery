@@ -43,3 +43,7 @@ console.log(dayjs(yesterday).isBefore(dayjs())); // true
 console.log(dayjs()); // 2021-03-01 17:00:00
 
 console.log(dayjs().isAfter(dayjs())); // false
+
+console.log(dayjs().add(1, 'day').toDate()) // 2021-03-02T17:00:00+09:00
+console.log(dayjs().toDate()) // 2021-03-01T17:00:00+09:00
+console.log(dayjs().subtract(1, 'day').toDate()) // 2021-02-28T17:00:00+09:00
