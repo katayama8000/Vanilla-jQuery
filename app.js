@@ -24,4 +24,4 @@ console.log(yesterday);
 
 // compare
 console.log(dayjs(yesterday).isAfter(day3));
-console.log(dayjs(yesterday).isBefore(day3.toDate()));
+console.log(dayjs(yesterday).isAfter(day3.toDate()));
