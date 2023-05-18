@@ -42,12 +42,24 @@ dayjs.extend(isSameOrAfter)
 // console.log(dayjs().endOf('day'));
 
 // 一時間後
-console.log(dayjs().add(1, 'hour').toDate());
-const addAHour = dayjs().add(1, 'hour').toDate();
-const addADay = dayjs().add(1, 'day').toDate();
+// console.log(dayjs().add(1, 'hour').toDate());
+// const addAHour = dayjs().add(1, 'hour').toDate();
+// const addADay = dayjs().add(1, 'day').toDate();
 // console.log(dayjs(addAHour).isSame(dayjs(), "date"));
 // console.log(dayjs(addAHour).isSame(dayjs()));
 // console.log(dayjs(addADay).isSame(dayjs(), "date"));
 // console.log(dayjs(addADay).isAfter(dayjs(), "date"));
-console.log(dayjs(addAHour).isAfter(dayjs(), "day"));
-console.log(dayjs(addADay).isSameOrAfter(dayjs(), "day"));
+// console.log(dayjs(addAHour).isAfter(dayjs(), "day"));
+// console.log(dayjs(addADay).isSameOrAfter(dayjs(), "day"));
+
+
+// function generatePassword() {
+//     return crypto.randomBytes(255).toString('base64').slice(0, length);
+// }
+
+// 非同期関数
+
+
+async function main() {
+
+}
