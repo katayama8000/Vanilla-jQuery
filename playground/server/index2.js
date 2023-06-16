@@ -17,3 +17,10 @@ new Promise((resolve, reject) => {
 console.log(Promise.resolve({ name: 'Alice' }))
 const tmp = Promise.resolve({ name: 'Alice' })
 console.log(typeof tmp)
+
+// null合体演算子
+const a = null;
+const b = a ?? "default";
+console.log(b);
+
+console.log(null ?? 'ng' === 'ok');
