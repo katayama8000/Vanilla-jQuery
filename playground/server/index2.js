@@ -24,3 +24,29 @@ const b = a ?? "default";
 console.log(b);
 
 console.log(null ?? 'ng' === 'ok');
+
+// closure
+function outer() {
+    let outerVal = 'outer';
+    function inner() {
+        let innerVal = 'inner';
+        console.log(outerVal);
+        console.log(innerVal);
+    }
+    return inner;
+}
+
+const innerFunc = outer();
+innerFunc();
+
+const addFunc = () => {
+    let counter = 0;
+    return () => {
+        counter++;
+        console.log(counter);
+    }
+}
+
+const add = addFunc();
+add();
+add();
