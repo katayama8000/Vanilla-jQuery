@@ -1,5 +1,6 @@
 import { useMutation, useQuery } from '@apollo/client';
 import { gql } from '../../apollo/__generated__/client';
+import { AddUser } from './addUser';
 
 const GETUSER = gql(`query GetUser {
   user {
@@ -14,27 +15,14 @@ const GETUSER = gql(`query GetUser {
   }
 }`);
 
-const ADDUSER = gql(`mutation addUser($name: String!) {
-  addUser(name: $name) {
-    id
-  }
-}`);
-
 export const User = () => {
   const { data, loading, error } = useQuery(GETUSER);
-  const [addUser] = useMutation(ADDUSER);
 
   if (loading) {
     return <div>Loading...</div>;
   }
   return (
     <div>
-      <button
-        onClick={async () => {
-          await addUser({ variables: { name: 'test' } });
-        }}>
-        Add User
-      </button>
       {error && <div>{error.message}</div>}
       <ul>
         <ul>
@@ -53,6 +41,7 @@ export const User = () => {
           </ol>
         )}
       </ul>
+      <AddUser />
     </div>
   );
 };
