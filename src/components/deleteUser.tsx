@@ -9,7 +9,7 @@ const DELETE_USER = gql(`
     `);
 export const DeleteUser = () => {
   const [deleteUser] = useMutation(DELETE_USER, {
-    refetchQueries: ['GetUser'],
+    refetchQueries: ['listUser'],
   });
   return (
     <button

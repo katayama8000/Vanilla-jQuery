@@ -1,9 +1,4 @@
-query GetUser {
-  user {
-    id
-    name
-    email
-  }
+query listUser {
   users {
     id
     name

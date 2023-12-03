@@ -8,7 +8,7 @@ const UPDATE_USER = gql(`mutation updateUser($id: ID!, $name: String!) {
 
 export const UpdateUser = () => {
   const [updateUser] = useMutation(UPDATE_USER, {
-    refetchQueries: ['GetUser'],
+    refetchQueries: ['listUser'],
   });
 
   return (

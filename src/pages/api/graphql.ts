@@ -40,9 +40,6 @@ const resolvers: Resolvers = {
     users() {
       return Array.from(userMap.values());
     },
-    user() {
-      return Array.from(userMap.values())[0];
-    },
   },
   Mutation: {
     addUser(_, { name }) {

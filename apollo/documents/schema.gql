@@ -1,6 +1,5 @@
 # ルートオペレーション型
 type Query {
-  user: User!
   users: [User!]!
 }
 

@@ -7,7 +7,7 @@ const ADD_USER = gql(`mutation addUser($name: String!) {
 }`);
 export const AddUser = () => {
   const [addUser] = useMutation(ADD_USER, {
-    refetchQueries: ['GetUser'],
+    refetchQueries: ['listUser'],
   });
 
   return (
