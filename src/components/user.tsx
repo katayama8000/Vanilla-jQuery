@@ -16,7 +16,9 @@ const GETUSER = gql(`query GetUser {
 }`);
 
 export const User = () => {
-  const { data, loading, error } = useQuery(GETUSER);
+  const { data, loading, error } = useQuery(GETUSER, {
+    fetchPolicy: 'cache-and-network',
+  });
 
   if (loading) {
     return <div>Loading...</div>;

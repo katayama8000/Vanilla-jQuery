@@ -1,12 +1,14 @@
 import { gql, useMutation } from '@apollo/client';
 
 const ADDUSER = gql(`mutation addUser($name: String!) {
-addUser(name: $name) {
-id
-}
+  addUser(name: $name) {
+    id
+  }
 }`);
 export const AddUser = () => {
-  const [addUser] = useMutation(ADDUSER);
+  const [addUser] = useMutation(ADDUSER, {
+    refetchQueries: ['GetUser'],
+  });
 
   return (
     <button
