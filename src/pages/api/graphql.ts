@@ -54,6 +54,15 @@ const resolvers: Resolvers = {
       userMap.set(user.id, user);
       return user;
     },
+
+    updateUser(_, { id, name }) {
+      const user = userMap.get(id);
+      if (!user) {
+        throw new Error(`User with id ${id} not found`);
+      }
+      user.name = name;
+      return user;
+    },
   },
 };
 

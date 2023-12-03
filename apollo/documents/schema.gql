@@ -7,6 +7,7 @@ type Query {
 # ルートオペレーション型
 type Mutation {
   addUser(name: String!): User
+  updateUser(id: ID!, name: String!): User
 }
 
 # User型

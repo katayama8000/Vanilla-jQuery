@@ -1,6 +1,7 @@
-import { useMutation, useQuery } from '@apollo/client';
+import { useQuery } from '@apollo/client';
 import { gql } from '../../apollo/__generated__/client';
 import { AddUser } from './addUser';
+import { UpdateUser } from './updateUser';
 
 const GET_USER = gql(`query GetUser {
   user {
@@ -44,6 +45,7 @@ export const User = () => {
         )}
       </ul>
       <AddUser />
+      <UpdateUser />
     </div>
   );
 };
