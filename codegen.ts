@@ -1,15 +1,21 @@
-import type { CodegenConfig } from '@graphql-codegen/cli';
+import { CodegenConfig } from '@graphql-codegen/cli';
 
 const config: CodegenConfig = {
-  overwrite: true,
-  schema: 'http://localhost:3000/graphQL',
-  documents: 'src/**/*.ts',
+  schema: 'apollo/documents/**/*.gql',
+  documents: ['apollo/documents/**/*.gql'],
   generates: {
-    'src/gql/': {
+    './apollo/__generated__/client/': {
       preset: 'client',
       plugins: [],
+      presetConfig: {
+        gqlTagName: 'gql',
+      },
+    },
+    './apollo/__generated__/server/resolvers-types.ts': {
+      plugins: ['typescript', 'typescript-resolvers'],
     },
   },
+  ignoreNoDocuments: true,
 };
 
 export default config;
