@@ -1,37 +1,27 @@
 {
-  "name": "javascript-playground",
-  "version": "1.0.0",
-  "description": "A playground for JavaScript",
-  "main": "index.js",
+  "name": "apollo-nextjs",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "node neomoba/index1.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/katayama8000/JavaScript-Playground.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/katayama8000/JavaScript-Playground/issues"
-  },
-  "homepage": "https://github.com/katayama8000/JavaScript-Playground#readme",
-  "devDependencies": {
-    "axios": "^1.3.4",
-    "cheerio": "^1.0.0-rc.12",
-    "dotenv": "^16.0.3",
-    "make-short-string": "^1.0.5",
-    "puppeteer": "^19.7.5",
-    "request": "^2.88.2",
-    "yahoo-finance2": "^2.3.10"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
   "dependencies": {
-    "cookie-storage": "^6.1.0",
-    "dayjs": "^1.11.7",
-    "express": "^4.18.2",
-    "moment-timezone": "^0.5.43",
-    "playwright-core": "^1.32.1"
+    "react": "^18",
+    "react-dom": "^18",
+    "next": "14.0.3"
+  },
+  "devDependencies": {
+    "typescript": "^5",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "autoprefixer": "^10.0.1",
+    "postcss": "^8",
+    "tailwindcss": "^3.3.0",
+    "eslint": "^8",
+    "eslint-config-next": "14.0.3"
   }
 }
