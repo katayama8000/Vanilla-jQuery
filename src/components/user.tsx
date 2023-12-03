@@ -1,6 +1,4 @@
-import { AddUser } from './addUser';
-import { UpdateUser } from './updateUser';
-import { DeleteUser } from './deleteUser';
+import { AddUser, UpdateUser, DeleteUser } from './button';
 import { ListUser } from './listUser';
 
 export const User = () => {
