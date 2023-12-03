@@ -9,13 +9,16 @@ type Query {
 
 type User {
   name: String
+  age: Int
 }
 
-query ALL_USERS {
+query USERS {
   users {
     name
+    age
   }
   user {
     name
+    age
   }
 }

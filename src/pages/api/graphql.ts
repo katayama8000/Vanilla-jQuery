@@ -9,13 +9,20 @@ const typeDefs = readFileSync(
   'utf-8'
 );
 
+const userMap = new Map<string, { name: string; age?: number }>([
+  ['bob', { name: 'bob', age: 19 }],
+  ['john', { name: 'john' }],
+  ['mike', { name: 'mike', age: 21 }],
+  ['zakk', { name: 'zakk', age: 18 }],
+]);
+
 const resolvers: Resolvers = {
   Query: {
     users() {
-      return [{ name: 'Nextjs' }, { name: 'Nuxtjs' }, { name: 'Sveltekit' }];
+      return Array.from(userMap.values());
     },
     user() {
-      return { name: 'Nextjs' };
+      return userMap.values().next().value;
     },
   },
 };
