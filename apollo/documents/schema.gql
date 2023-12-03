@@ -1,24 +1,12 @@
-schema {
-  query: Query
-}
-
+# ルートオペレーション型
 type Query {
-  users: [User!]!
   user: User!
+  users: [User!]!
 }
 
+# User型
 type User {
-  name: String
-  age: Int
-}
-
-query USERS {
-  users {
-    name
-    age
-  }
-  user {
-    name
-    age
-  }
+  id: ID!
+  name: String!
+  email: String!
 }

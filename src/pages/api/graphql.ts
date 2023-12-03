@@ -9,11 +9,30 @@ const typeDefs = readFileSync(
   'utf-8'
 );
 
-const userMap = new Map<string, { name: string; age?: number }>([
-  ['bob', { name: 'bob', age: 19 }],
-  ['john', { name: 'john' }],
-  ['mike', { name: 'mike', age: 21 }],
-  ['zakk', { name: 'zakk', age: 18 }],
+const userMap = new Map<
+  string,
+  {
+    id: string;
+    name: string;
+    email: string;
+  }
+>([
+  [
+    '1',
+    {
+      id: '1',
+      name: 'John Smith',
+      email: 'john@example.com',
+    },
+  ],
+  [
+    '2',
+    {
+      id: '2',
+      name: 'Jane Smith',
+      email: 'jane@example.com',
+    },
+  ],
 ]);
 
 const resolvers: Resolvers = {
@@ -22,7 +41,7 @@ const resolvers: Resolvers = {
       return Array.from(userMap.values());
     },
     user() {
-      return userMap.values().next().value;
+      return Array.from(userMap.values())[0];
     },
   },
 };

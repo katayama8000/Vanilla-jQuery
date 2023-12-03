@@ -1,19 +1,21 @@
 import { useQuery } from '@apollo/client';
 import { gql } from '../../apollo/__generated__/client';
 
-const USERS = gql(`query USERS {
-  users {
-    name
-    age
-  }
+const GETUSER = gql(`query GetUser {
   user {
+    id
     name
-    age
+    email
+  }
+  users {
+    id
+    name
+    email
   }
 }`);
 
 export const User = () => {
-  const { data, loading, error } = useQuery(USERS);
+  const { data, loading, error } = useQuery(GETUSER);
   if (loading) {
     return <div>Loading...</div>;
   }
@@ -25,14 +27,14 @@ export const User = () => {
           {data &&
             data.users.map((v, i) => (
               <li key={String(i)}>
-                name: {v.name}/ age: {v.age}
+                name: {v.name}/ email: {v.email}
               </li>
             ))}
         </ul>
         {data && data.user && (
           <ol>
             <li>
-              name: {data.user.name}/ age: {data.user.age}
+              name: {data.user.name}/ email: {data.user.email}
             </li>
           </ol>
         )}
