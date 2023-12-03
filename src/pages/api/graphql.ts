@@ -14,6 +14,9 @@ const resolvers: Resolvers = {
     users() {
       return [{ name: 'Nextjs' }, { name: 'Nuxtjs' }, { name: 'Sveltekit' }];
     },
+    user() {
+      return { name: 'Nextjs' };
+    },
   },
 };
 

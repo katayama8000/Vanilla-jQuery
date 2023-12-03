@@ -5,6 +5,9 @@ const ALL_USERS = gql(`query ALL_USERS {
   users {
     name
   }
+  user {
+    name
+  }
 }`);
 
 export const User = () => {
@@ -17,6 +20,7 @@ export const User = () => {
       {error && <div>{error.message}</div>}
       <ul>
         {data && data.users.map((v, i) => <li key={String(i)}>{v.name}</li>)}
+        {data && data.user && <li>{data.user.name}</li>}
       </ul>
     </div>
   );
