@@ -63,6 +63,15 @@ const resolvers: Resolvers = {
       user.name = name;
       return user;
     },
+
+    deleteUser(_, { id }) {
+      const user = userMap.get(id);
+      if (!user) {
+        throw new Error(`User with id ${id} not found`);
+      }
+      userMap.delete(id);
+      return user;
+    },
   },
 };
 

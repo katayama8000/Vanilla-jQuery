@@ -9,3 +9,9 @@ mutation updateUser($id: ID!, $name: String!) {
     id
   }
 }
+
+mutation deleteUser($id: ID!) {
+  deleteUser(id: $id) {
+    id
+  }
+}

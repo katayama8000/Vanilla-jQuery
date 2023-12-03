@@ -2,6 +2,7 @@ import { useQuery } from '@apollo/client';
 import { gql } from '../../apollo/__generated__/client';
 import { AddUser } from './addUser';
 import { UpdateUser } from './updateUser';
+import { DeleteUser } from './deleteUser';
 
 const GET_USER = gql(`query GetUser {
   user {
@@ -46,6 +47,7 @@ export const User = () => {
       </ul>
       <AddUser />
       <UpdateUser />
+      <DeleteUser />
     </div>
   );
 };
