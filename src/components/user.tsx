@@ -2,7 +2,7 @@ import { useMutation, useQuery } from '@apollo/client';
 import { gql } from '../../apollo/__generated__/client';
 import { AddUser } from './addUser';
 
-const GETUSER = gql(`query GetUser {
+const GET_USER = gql(`query GetUser {
   user {
     id
     name
@@ -16,7 +16,7 @@ const GETUSER = gql(`query GetUser {
 }`);
 
 export const User = () => {
-  const { data, loading, error } = useQuery(GETUSER, {
+  const { data, loading, error } = useQuery(GET_USER, {
     fetchPolicy: 'cache-and-network',
   });
 
