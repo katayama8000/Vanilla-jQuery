@@ -44,6 +44,17 @@ const resolvers: Resolvers = {
       return Array.from(userMap.values())[0];
     },
   },
+  Mutation: {
+    addUser(_, { name }) {
+      const user = {
+        id: `${userMap.size + 1}`,
+        name,
+        email: `${name.toLowerCase().replace(/\s/g, '')}@example.com`,
+      };
+      userMap.set(user.id, user);
+      return user;
+    },
+  },
 };
 
 const apolloServer = new ApolloServer<Resolvers>({ typeDefs, resolvers });

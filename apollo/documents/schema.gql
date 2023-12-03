@@ -4,6 +4,11 @@ type Query {
   users: [User!]!
 }
 
+# ルートオペレーション型
+type Mutation {
+  addUser(name: String!): User
+}
+
 # User型
 type User {
   id: ID!
